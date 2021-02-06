@@ -1,3 +1,12 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 4rem;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: black;
@@ -40,4 +49,9 @@
 .dropdown-item:hover {
   color: rgba(0, 0, 0, 0.8);
   transition: color .3s;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 1.0rem;
+    padding-left: 1.0rem;
 }
