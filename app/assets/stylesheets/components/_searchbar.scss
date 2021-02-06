@@ -1,0 +1,73 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+.product-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  width: 700px;
+  height: 60px;
+}
+
+.search-element {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  border-right: 1px solid rgba(10,10,10,.1);
+  padding: 0 28px 0 28px;
+  font-size: 0.9em;
+}
+
+.search-label {
+  font-weight: 450;
+}
+
+.search-input {
+  border: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin-top: 0px;
+}
+
+.search-input:focus {
+
+}
+
+.search-button {
+  display: inline-block;
+  flex-grow: 1;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 0.6em;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 100;
+  border: 0;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  color: white;
+  background-color: rgb(133, 138, 227);
+  transition: background-color 0.8s ease;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
+.search-button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #6bc5f8;
+  transition: color .4s
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0;
+}

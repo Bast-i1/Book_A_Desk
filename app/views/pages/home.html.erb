@@ -1,17 +1,28 @@
 <div class="banner">
   <div class="container">
     <div class="row search-row homesearch">
-      <div class="col-10">
-       <%= form_tag offices_path, method: :get do %>
-       <%= text_field_tag :query,
-        params[:query],
-        class: "form-control searchbar",
-        placeholder: "Find a coworking by name, city, address ..."
-       %>
-      </div>
-      <div class="col-2">
-        <%= submit_tag "Search", class: "login-btn" %>
-        <% end %>
+      <div>
+        <form action="" method="get">
+          <div class="product-search">
+            <div class="search-element">
+              <label class="search-label">Location</label>
+              <input class="search-input" type="text" placeholder="Where ?" class="" autocomplete="on" name="location">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Environment</label>
+              <input class="search-input" type="text" autocomplete="on" placeholder="Office types" name="query">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Dates</label>
+              <input class="search-input" type="dates" autocomplete="on" placeholder="Add dates" name="dates">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Nb of desks</label>
+              <input class="search-input" type="number" autocomplete="on" placeholder="Add Number" name="number">
+            </div>
+            <a type="submit" class="search-button">Search</a>
+          </div>
+        </form>
       </div>
     </div>
     <div class="row">
