@@ -1,25 +1,51 @@
 <div class="container">
-  <div class="p-5 d-flex justify-content-around">
-    <div class="row search-row">
-      <div class="col-10">
-        <%= form_tag offices_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control searchbar",
-        placeholder: "Find a coworking space by name, city, address ..."
-        %>
-      </div>
-      <div class="col-2">
-        <%= submit_tag "Search", class: "login-btn" %>
-        <% end %>
+
+<!-- Searchbar -->
+  <div class="row search-row homesearch">
+      <div>
+        <form action="" method="get">
+          <div class="product-search">
+            <div class="search-element">
+              <label class="search-label">Location</label>
+              <input class="search-input" type="text" placeholder="Where ?" class="" autocomplete="on" name="location">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Environment</label>
+              <input class="search-input" type="text" autocomplete="on" placeholder="Office types" name="query">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Dates</label>
+              <input class="search-input" type="dates" autocomplete="on" placeholder="Add dates" name="dates">
+            </div>
+            <div class="search-element">
+              <label class="search-label">Nb of desks</label>
+              <input class="search-input" type="number" autocomplete="on" placeholder="Add Number" name="number">
+            </div>
+            <a type="submit" class="search-button">Search</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  <!-- End of searchbar -->
+
   <div class="p-5 d-flex">
-    <h2>Coworking spaces</h2>
+    <h2>Work spaces</h2>
   </div>
 </div>
 
+<!-- Map with Snazzymaps -->
+<div class="container">
+  <div class="div-block-149">
+    <div class="html-embed-3 w-embed w-iframe">
+      <iframe src="https://snazzymaps.com/embed/238471" width="100%" height="400px" style="border:none;">
+      </iframe>
+    </div>
+  </div>
+</div>
+<!-- End of the map -->
+
+<!-- List of cards -->
 <div class="row no-gutters">
   <div class="col-sm-6 col-md-8">
     <div class="row">
@@ -42,3 +68,4 @@
       <div id="map" data-markers="<%= @markers.to_json %>"  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
     </div>
 </div>
+<!-- End of the list of cards -->
