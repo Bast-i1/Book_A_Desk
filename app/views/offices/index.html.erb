@@ -1,5 +1,3 @@
-<div class="container">
-
 <!-- Searchbar -->
   <div class="row search-row homesearch">
       <div>
@@ -26,13 +24,9 @@
         </form>
       </div>
     </div>
-  </div>
   <!-- End of searchbar -->
 
-  <div class="p-5 d-flex">
-    <h2>Work spaces</h2>
-  </div>
-</div>
+<!-- CODE TEST POSITION MAP-->
 
 <!-- Map with Snazzymaps -->
 <div class="container">
@@ -45,12 +39,17 @@
 </div>
 <!-- End of the map -->
 
-<!-- List of cards -->
-<div class="row no-gutters">
+  <div class="row no-gutters">
   <div class="col-sm-6 col-md-8">
     <div class="row">
-      <% @offices.each do |office| %>
-        <div class="clash-card barbarian my-5 mx-5">
+      <div class="p-5 d-flex justify-content-around">
+      <h2>Work Spaces</h2>
+      </div>
+    </div>
+
+    <% @offices.each do |office| %>
+    <%= link_to office_path(office) do%>
+    <div class="clash-card barbarian my-5 mx-5">
           <div class="clash-card__image clash-card__image--barbarian">
             <img src="https://cdn.glitch.com/c13537fc-8924-4dee-b876-b562eed68eae%2Fpikachu-removebg-preview.png?v=1605611430597" height="252px" width="247px" alt="pikachu" />
             </div>
@@ -63,9 +62,16 @@
             </div>
         </div>
       <% end %>
-  </div>
+      <% end %>
+
+     </div>
       <div class="col-6 col-md-4">
-      <div id="map" data-markers="<%= @markers.to_json %>"  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
+       <div id="map" data-markers="<%= @markers.to_json %>"  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" >
+       </div>
+      </div>
     </div>
+
 </div>
-<!-- End of the list of cards -->
+
+<!-- CODE TEST POSITION MAP FIN-->
+  
