@@ -37,7 +37,7 @@ class OfficesController < ApplicationController
     authorize @office
 
     if @office.save
-      redirect_to @office, notice: 'Your coworking space was successfully created.'
+      redirect_to @office, notice: 'Your work space was successfully created.'
     else
       render :new
     end
@@ -52,7 +52,7 @@ class OfficesController < ApplicationController
 
   def destroy
     @office.destroy
-    redirect_to root_path, notice: 'Your office space was successfully destroyed.'
+    redirect_to root_path, notice: 'Your work space was successfully destroyed.'
   end
 
   private

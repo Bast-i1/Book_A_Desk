@@ -13,9 +13,9 @@
         <div class="clash-card barbarian mt-5">
           <div class="clash-card__image clash-card__image--barbarian">
             <% if @office.photo.attached? %>
-            <%= cl_image_tag @office.photo.key, height: 252, width: 252, crop: :fill %>
+              <%= cl_image_tag @office.photo.key, height: 252, width: 252, crop: :fill %>
             <% else %>
-            <img src="https://cdn.glitch.com/c13537fc-8924-4dee-b876-b562eed68eae%2Fpikachu-removebg-preview.png?v=1605611430597" height="252px" width="247px" alt="pikachu" />
+              <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4ff237bdf7f33457a7c87f_kwerk1.jpg" alt="" class="brand-image-card">
             <% end %>
             </div>
             <div class="clash-card__unit-name"><%= @office.name %></div>

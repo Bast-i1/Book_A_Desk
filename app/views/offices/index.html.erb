@@ -50,22 +50,22 @@
   <div class="col-sm-6 col-md-8">
     <div class="row">
       <% @offices.each do |office| %>
-        <div class="clash-card barbarian my-5 mx-5">
-          <div class="clash-card__image clash-card__image--barbarian">
-            <img src="https://cdn.glitch.com/c13537fc-8924-4dee-b876-b562eed68eae%2Fpikachu-removebg-preview.png?v=1605611430597" height="252px" width="247px" alt="pikachu" />
+        <a href="/les-espaces-de-coworking-a-paris/kwerk" class="link-to-card-block">
+          <div class="div-block-card">
+            <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4ff237bdf7f33457a7c87f_kwerk1.jpg" alt="" class="brand-image-card">
+            <div class="div-block-logo-card">
+              <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4d2092a53ace9244b8c8ca_Kwerk%20logo.png" alt="" class="brand-logo-card">
             </div>
-            <div class="clash-card__unit-name"><%= link_to office.name, office_path(office) %></div>
-            <div class="clash-card__unit-description"> <%= office.description %> </div>
-            <div class="clash-card__unit-stats clash-card__unit-stats--barbarian">
-              <div class="one-third no-border">
-                <div class="stat"><%= office.price %>€/d</div>
-              </div>
-            </div>
-        </div>
+            <div class="title-card"><%= link_to office.name, office_path(office) %></div>
+            <div class="address-card"><%= link_to office.address %></div>
+            <div class="price-card"><%= link_to office.price %></div>
+          </div>
+        </a>
       <% end %>
-  </div>
-      <div class="col-6 col-md-4">
+    </div>
+    <div class="col-6 col-md-4">
       <div id="map" data-markers="<%= @markers.to_json %>"  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
     </div>
+  </div>
 </div>
 <!-- End of the list of cards -->
