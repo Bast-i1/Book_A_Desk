@@ -26,13 +26,8 @@
 }
 
 .link-to-card-block {
-    width: 300px;
-    margin-right: 10px;
-}
-
-.link-to-card-block {
+    margin-right: 30px;
     margin-top: 0;
-    margin-bottom: 10px;
     -webkit-transition: box-shadow .5s cubic-bezier(.165,.84,.44,1),margin-top .5s cubic-bezier(.165,.84,.44,1);
     transition: box-shadow .5s cubic-bezier(.165,.84,.44,1),margin-top .5s cubic-bezier(.165,.84,.44,1);
 }
@@ -46,6 +41,11 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
 a, h3 {
     color: #1f6fff;
 }
@@ -53,7 +53,6 @@ a, h3 {
 .div-block-card {
     width: 300px;
     height: 390px;
-    margin: 10px;
     padding-bottom: 20px;
     background-color: #fff;
     box-shadow: 3px 3px 15px -8px #000;
