@@ -28,18 +28,6 @@
               </div>
             </div>
         </div>
-      <%# if @pokemon.photo.attached? %> <%# background_url = cl_image_path @pokemon.photo.key, width: 300, height: 400, crop: :fill %>
-      <%# else %> <%# background_url = 'https://source.unsplash.com/300x400/?pokemon' %>
-      <%# end %>
-    </div>
-    <!-- ancien formulaire de réservation >
-    <div class="col-6 rounded d-flex justify-content-center align-items-center">
-      <%= simple_form_for [@pokemon, @pokemon.bookings.new] do |f| %>
-        <%= f.input :start_date, as: :date, class: "wd-100"%>
-        <%= f.input :end_date, as: :date %>
-        <%= f.submit 'Book office', class: "btn btn-warning" %>
-      <% end %>
-    </div> -->
 
     <!-- Flatpickr -->
     <div class="col-6 rounded justify-content-center align-items-center">

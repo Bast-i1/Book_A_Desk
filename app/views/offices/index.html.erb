@@ -42,7 +42,7 @@
   <div class="col-sm-6 col-md-8">
     <div class="row">
       <% @offices.each do |office| %>
-        <a href="/les-espaces-de-coworking-a-paris/kwerk" class="link-to-card-block">
+        <dive class="link-to-card-block"> <%= link_to office_path(office) do %>
           <div class="div-block-card">
             <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4ff237bdf7f33457a7c87f_kwerk1.jpg" alt="" class="brand-image-card">
             <div class="div-block-logo-card">
@@ -52,7 +52,8 @@
             <div class="address-card"><%= link_to office.address %></div>
             <div class="price-card"><%= link_to office.price %></div>
           </div>
-        </a>
+        <% end %>
+        </dive>
       <% end %>
     </div>
     <div class="col-6 col-md-4">
