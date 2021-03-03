@@ -1,0 +1,8 @@
+<%= simple_form_for @meetingrooms do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit 'Generate New Meeting Rooms', class: "btn btn-warning" %>
+<% end %>

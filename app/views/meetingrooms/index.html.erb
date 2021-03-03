@@ -41,16 +41,16 @@
 <div class="row no-gutters">
   <div class="col-sm-6 col-md-8">
     <div class="row">
-      <% @offices.each do |office| %>
+      <% @meetingrooms.each do |meetingroom| %>
         <a href="/les-espaces-de-coworking-a-paris/kwerk" class="link-to-card-block">
           <div class="div-block-card">
             <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4ff237bdf7f33457a7c87f_kwerk1.jpg" alt="" class="brand-image-card">
             <div class="div-block-logo-card">
               <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4d2092a53ace9244b8c8ca_Kwerk%20logo.png" alt="" class="brand-logo-card">
             </div>
-            <div class="title-card"><%= link_to office.name, office_path(office) %></div>
-            <div class="address-card"><%= link_to office.address %></div>
-            <div class="price-card"><%= link_to office.price %></div>
+            <div class="title-card"><%= link_to meetingroom.name, meetingroom_path(meetingroom) %></div>
+            <div class="address-card"><%= link_to meetingroom.address %></div>
+            <div class="price-card"><%= link_to meetingroom.price %></div>
           </div>
         </a>
       <% end %>
@@ -61,4 +61,3 @@
   </div>
 </div>
 <!-- End of Cards list -->
-
