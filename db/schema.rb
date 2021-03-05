@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_101753) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_offices_on_user_id"
   end
 
