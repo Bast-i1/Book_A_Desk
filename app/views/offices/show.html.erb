@@ -1,65 +1,66 @@
 <div class="banner-show">
   <div class="container">
     <div class="row">
+
+      <!-- Space's info -->
       <div class="col-md-6 mt-n5">
-         <%= link_to "Go Back to officess' list", offices_path, class: "login-btn mt-5" %>
+         <%= link_to "< go back", offices_path, class: "login-btn mt-5" %>
          <br>
          <% if policy(@office).edit? %>
-          <%= link_to "Edit Me!", edit_office_path(@office), class: "delete-btn" %>
+          <%= link_to "Edit this add", edit_office_path(@office), class: "delete-btn" %>
          <% end %>
          <% if policy(@office).destroy? %>
-          <p> <%= link_to 'Delete me! ... wait ... WHAAAAT ?', @office, method: :delete, data: {confirm: "Do you REALY want to delete this Office?"}, class: 'delete-btn'%></p>
+          <p> <%= link_to 'Delete this add', @office, method: :delete, data: {confirm: "Do you REALY want to delete this add?"}, class: 'delete-btn'%></p>
         <% end %>
-        <div class="clash-card barbarian mt-5">
-          <div class="clash-card__image clash-card__image--barbarian">
+        <div>
+          <div>
+            <div><%= @office.address %></div>
             <% if @office.photo.attached? %>
               <%= cl_image_tag @office.photo.key, height: 252, width: 252, crop: :fill %>
             <% else %>
               <img src="https://uploads-ssl.webflow.com/5dda416acd7d3707621e2feb/5e4ff237bdf7f33457a7c87f_kwerk1.jpg" alt="" class="brand-image-card">
             <% end %>
             </div>
-            <div class="clash-card__unit-name"><%= @office.name %></div>
-            <div class="clash-card__unit-description">
-              <%= @office.description %>
-            </div>
+            <div><%= @office.name %></div>
+            <div><%= @office.description %></div>
             <div class="clash-card__unit-stats clash-card__unit-stats--barbarian">
-              <div class="one-third no-border">
-                <div id="price" class="stat"><%= @office.price %>€/d</div>
-              </div>
             </div>
         </div>
-
-    <!-- Flatpickr -->
-    <div class="col-6 rounded justify-content-center align-items-center">
-      <h2>Book this <%= @office.name %></h2>
-      <div class="align-items-start d-flex">
-        <%= simple_form_for [@office, @office.bookings.new] do |f| %>
-          <%= f.input  :start_date, label: "Pick your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
-          <%= f.input  :end_date, as: :string, label: false, required: false, input_html: {id: "range_end", class: "d-none" } %>
-
-    <div
-      id="booking-form-div"
-      data-bookings="<%= @bookings_dates.to_json %>"
-    >
-    <p class="text-color">Book it for <span id="total-nights">0</span> days</p>
-    <p class="text-color">Total price: <span id="total-price">0</span> € </p>
-          <%= f.button :submit, "Catch it", class: "btn btn-primary" %>
-        <% end %>
-        <%= link_to office_path(@office) do %>
-        <button type="button" class="icon-close mt-3" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-
       </div>
-      <% end %>
-  </div>
-</div>
-</div>
+      <!-- Space's info end -->
 
-</div>
-  <% @office.reviews.each do |review| %>
-    <p class="text-color"> Comment: <%= review.comment %> </p>
-    <p class="text-color"> Rating: <%= review.rating %> </p>
-    <p> <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: "Do you REALY want to delete this review?"}, class: 'delete-btn'%> </p>
-  <% end %>
+      <!-- Flatpickr to book this space-->
+      <div class="col-6 rounded justify-content-center align-items-center">
+        <h2>Book this space for <%= @office.price %>€/day</h2>
+        <div class="align-items-start d-flex">
+          <%= simple_form_for [@office, @office.bookings.new] do |f| %>
+            <%= f.input  :start_date, label: "Pick your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
+            <%= f.input  :end_date, as: :string, label: false, required: false, input_html: {id: "range_end", class: "d-none" } %>
+          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+            <p class="text-color">Book it for <span id="total-nights">0</span> days</p>
+            <p class="text-color">Total price: <span id="total-price">0</span> € </p>
+            <%= f.button :submit, "Book", class: "btn btn-primary" %>
+          <% end %>
+
+          <%= link_to office_path(@office) do %>
+            <button type="button" class="icon-close mt-3" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          <% end %>
+        </div>
+      </div>
+      <!-- Flatpickr end -->
+
+      <!-- Reviews -->
+      <div>
+        <% @office.reviews.each do |review| %>
+          <p class="text-color"> Comment: <%= review.comment %> </p>
+          <p class="text-color"> Rating: <%= review.rating %> </p>
+          <p> <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: "Do you REALY want to delete this review?"}, class: 'delete-btn'%> </p>
+        <% end %>
+      </div>
+      <!-- Reviews end -->
+
+    </div>
+  </div>
 </div>
