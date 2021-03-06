@@ -31,22 +31,25 @@
 
       <!-- Flatpickr to book this space-->
       <div class="col-6 rounded justify-content-center align-items-center">
-        <h2>Book this space for <%= @office.price %>€/day</h2>
-        <div class="align-items-start d-flex">
-          <%= simple_form_for [@office, @office.bookings.new] do |f| %>
-            <%= f.input  :start_date, label: "Pick your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
-            <%= f.input  :end_date, as: :string, label: false, required: false, input_html: {id: "range_end", class: "d-none" } %>
-          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
-            <p class="text-color">Book it for <span id="total-nights">0</span> days</p>
-            <p class="text-color">Total price: <span id="total-price">0</span> € </p>
-            <%= f.button :submit, "Book", class: "btn btn-primary" %>
-          <% end %>
+        <div class="booking_box">
+          <h2>Book this space for <%= @office.price %>€/day</h2>
+          <div class="align-items-start d-flex">
+            <%= simple_form_for [@office, @office.bookings.new] do |f| %>
+              <%= f.input  :start_date, label: "Pick your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
+              <%= f.input  :end_date, as: :string, label: false, required: false, input_html: {id: "range_end", class: "d-none" } %>
+            <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+              <p class="text-color">Book it for <span id="total-nights">0</span> days</p>
+              <p class="text-color">Total price: <span id="total-price">0</span> € </p>
+              <%= f.button :submit, "Book", class: "btn btn-primary" %>
+            <% end %>
 
-          <%= link_to office_path(@office) do %>
-            <button type="button" class="icon-close mt-3" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          <% end %>
+            <%= link_to office_path(@office) do %>
+              <button type="button" class="icon-close mt-3" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <% end %>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Flatpickr end -->
